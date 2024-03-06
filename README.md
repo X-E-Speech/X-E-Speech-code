@@ -9,8 +9,8 @@ Demo page: https://X-E-Speech.github.io/X-E-Speech-demopage
 Anonymous preprint: https://openreview.net/forum?id=J4fL6FDz36
 
 
-I'm cleaning the code, I will upload the code and pre-trained models as soon as possible.
+I'm cleaning the train code.
 
-The inference code is available now
+The inference code is available now, the environment is similar to VITS.
 
 The pre-trained models are available here:
