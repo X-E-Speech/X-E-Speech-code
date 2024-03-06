@@ -13,4 +13,4 @@ I'm cleaning the train code.
 
 The inference code is available now, the environment is similar to VITS.
 
-The pre-trained models are available here:
+The pre-trained models are available here: https://drive.google.com/drive/folders/1TUbBY-BSU7KXbN1N-G8QesAMK96fQVc9?usp=sharing
