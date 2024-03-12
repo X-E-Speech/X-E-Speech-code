@@ -1,18 +1,19 @@
 import os
+import random
+
+import librosa
 import matplotlib.pyplot as plt
-
-from scipy.io.wavfile import write
-
 import torch
+from scipy.io.wavfile import write
 from torch import nn
 from torch.nn import functional as F
 from torch.utils.data import DataLoader
-import librosa
+
 import commons
 import utils
 from mel_processing import mel_spectrogram_torch
 
-import random
+
 def adjust_tensor_size(tensor, target_size):
     _, t = tensor.size()
     #print(t,target_size)
@@ -26,13 +27,13 @@ def adjust_tensor_size(tensor, target_size):
     #print(t,target_size)
     return adjusted_tensor
 
-from models_whisper_hier_multi_pure import SynthesizerTrn
-
-from text_cn import cleaned_text_to_sequence
-from text_cn.symbols import symbols
-from text_cn.cleaners import chinese_cleaners1,english_cleaners2
-
 import numpy as np
+
+from models_whisper_hier_multi_pure import SynthesizerTrn
+from text_cn import cleaned_text_to_sequence
+from text_cn.cleaners import chinese_cleaners1, english_cleaners2
+from text_cn.symbols import symbols
+
 
 def get_text_en(text):
     print(text)
@@ -110,6 +111,7 @@ def tts_en(text_str,ref_wav_path):
 
 count=0
 from tqdm import tqdm
+
 phone_text=[
     "bɪkˈʌz hiː wʌzɐ mˈæn wɪð ˈɪnfɪnət ɹᵻsˈoːɹs ænd səɡˈæsᵻɾi.",
     "ðɪs wʌzðə twˈɛnti fˈɪfθ ʌv noʊvˈɛmbɚ, sˈɛvəntˌiːn ˈeɪɾi θɹˈiː.",

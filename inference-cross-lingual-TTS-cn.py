@@ -1,24 +1,23 @@
 import os
+
+import librosa
 import matplotlib.pyplot as plt
-
-from scipy.io.wavfile import write
-
+import numpy as np
 import torch
+from data_utils_whisper_hier_multi_pure import adjust_tensor_size
+from scipy.io.wavfile import write
 from torch import nn
 from torch.nn import functional as F
 from torch.utils.data import DataLoader
-import librosa
+
 import commons
 import utils
 from mel_processing import mel_spectrogram_torch
-from data_utils_whisper_hier_multi_pure import adjust_tensor_size
 from models_whisper_hier_multi_pure import SynthesizerTrn, SynthesizerTrn_3
-
 from text_cn import cleaned_text_to_sequence
+from text_cn.cleaners import chinese_cleaners1, english_cleaners2
 from text_cn.symbols import symbols
-from text_cn.cleaners import chinese_cleaners1,english_cleaners2
 
-import numpy as np
 
 def get_text_cn(text):
     # print(text)
@@ -99,6 +98,7 @@ def tts_en(text_str,ref_wav_path,count,tmp):
 
 count=0
 from tqdm import tqdm
+
 phone_text=[
     "ji4 - liu4 yue4 - chong1 - gao1 - hou4 - you3 suo3 - hui2 luo4",
     "xiao4 hua1 de5 tie1 shen1 gao1 shou3 - shu1 ji2 - you3 - shen2 me5",
