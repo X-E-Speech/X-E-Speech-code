@@ -1,0 +1,12 @@
+Cython
+librosa==0.9.1
+matplotlib
+numpy==1.26.4
+phonemizer
+scipy
+tensorboard
+torch
+torchvision
+Unidecode
+tqdm
+pypinyin
