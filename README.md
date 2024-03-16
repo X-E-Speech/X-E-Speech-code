@@ -17,4 +17,4 @@ The pre-trained models are available here: https://drive.google.com/drive/folder
 
 I will write a better readme and manage the code in the following days. (Actually, if you are very familiar with VITS, just read the code, you can understand what I changed on the VITS)
 
-There must be a lot of bugs and incomplete code in this version... please remind me what I should do by the issues.
+
