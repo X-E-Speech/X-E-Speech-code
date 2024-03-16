@@ -142,10 +142,10 @@ def load_filepaths_and_text(filename, split="|"):
     filepaths_and_text = [line.strip().split(split) for line in f]
   return filepaths_and_text
 
-#可以改这里，就不用每次手动设置了
+
 def get_hparams(init=True):
   parser = argparse.ArgumentParser()
-  parser.add_argument('-c', '--config', type=str, default="/config.json",#
+  parser.add_argument('-c', '--config', type=str, default="config.json",#
                       help='JSON file for configuration')
   parser.add_argument('-m', '--model', type=str, default="xtts",
                       help='Model name')

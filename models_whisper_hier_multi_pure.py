@@ -180,7 +180,7 @@ class TextEncoder(nn.Module):
     x = self.emb(x) * math.sqrt(self.hidden_channels) # [b, t, h]
     x = torch.transpose(x, 1, -1) # [b, h, t]
 
-    x=x+self.cond(lang)
+    x=x+self.cond(lang)#这么设计是为啥来着
 
     lang = lang.expand(lang.shape[0], lang.shape[1], x.shape[-1])
 
