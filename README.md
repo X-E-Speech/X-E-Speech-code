@@ -9,6 +9,7 @@ Demo page: https://X-E-Speech.github.io/X-E-Speech-demopage
 Anonymous preprint: https://openreview.net/forum?id=J4fL6FD
 
 The generation of whisper encoder output refer to: https://github.com/PlayVoice/lora-svc
+(I will upload the code and instruction for data process later)
 
 The inference and train codes are available now, the environment is similar to VITS.
 
