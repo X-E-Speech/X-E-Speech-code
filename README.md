@@ -6,7 +6,7 @@
 Demo page: https://X-E-Speech.github.io/X-E-Speech-demopage
 
 
-Anonymous preprint: https://openreview.net/forum?id=J4fL6FD
+Anonymous preprint: [https://openreview.net/forum?id=J4fL6FD](https://openreview.net/forum?id=J4fL6FDz36)
 
 The generation of whisper encoder output refer to: https://github.com/PlayVoice/lora-svc
 (I will upload the code and instruction for data process later)
