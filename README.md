@@ -26,19 +26,47 @@ We also provide the [pretrained models](https://drive.google.com/drive/folders/1
 - Better readme
 - HuggingFace or Colab
 
+## Pre-requisites
 
-The generation of whisper encoder output refer to: https://github.com/PlayVoice/lora-svc
-(I will upload the code and instruction for data process later)
+1. Clone this repo: `git clone https://github.com/X-E-Speech/X-E-Speech-code.git`
 
-The inference and train codes are available now, the environment is similar to VITS.
+2. CD into this repo: `cd X-E-Speech-code`
 
-The pre-trained models are available here: https://drive.google.com/drive/folders/1PHzFyqkOa_7O4TVI6vypZa8MIpU7nIbT?usp=sharing
+3. Install python requirements: `pip install -r requirements.txt`
 
-I will write a better readme and manage the code in the following days. 
+4. Download [Whisper-large-v2](https://openaipublic.azureedge.net/main/whisper/models/81f7c96c852ee8fc832187b0132e569d6c3065a3252ed18e56effd0b6a73e524/large-v2.pt) and put it under directory 'whisper-pretrain/'
 
+5. Download the [VCTK](https://datashare.ed.ac.uk/handle/10283/3443), [Aishell3](https://www.openslr.org/93/), [JVS](https://sites.google.com/site/shinnosuketakamichi/research-topics/jvs_corpus) dataset (for training cross-lingual TTS and VC)
+
+6. Download the [ESD](https://github.com/HLTSingapore/Emotional-Speech-Data) dataset (for training cross-lingual emotional TTS and VC)
+
+
+## Inference Example
+
+Download the pretrained checkpoints and run:
+
+```python
+
+```
+
+## Training Example
+
+1. Preprocess
+
+```python
+
+
+```
+
+2. Train
+
+```python
+
+```
 
 ## References
 
 - https://github.com/jaywalnut310/vits
 - https://github.com/PlayVoice/lora-svc
 - https://github.com/ConsistencyVC/ConsistencyVC-voive-conversion
+- https://github.com/OlaWod/FreeVC/blob/main/README.md
