@@ -24,7 +24,7 @@ We also provide the [pretrained models](https://drive.google.com/drive/folders/1
 
 - Better inference code.
 - Better readme
-- HuggingFace or Colab
+- [HuggingFace](https://huggingface.co/x-e-speech/x-e-speech) or Colab
 
 ## Pre-requisites
 
