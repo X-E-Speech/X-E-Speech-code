@@ -22,8 +22,7 @@ We also provide the [pretrained models](https://drive.google.com/drive/folders/1
 
 ## Todo list
 
-- Better inference code.
-- Better readme
+- Better inference code and instructions for inference code
 - [HuggingFace](https://huggingface.co/x-e-speech/x-e-speech) or Colab
 
 ## Pre-requisites
@@ -57,25 +56,66 @@ python setup.py build_ext --inplace
 Download the pretrained checkpoints and run:
 
 ```python
+#Under construction
 
 ```
 
 ## Training Example
 
-1. Preprocess
+1. Preprocess-resample to 16KHz
+
+Copy datasets to the `dataset` folder and then resample the audios to 16KHz by `dataset/downsample.py`.
+This will rewrite the original wav files, so please copy but not cut your original dataset!
+
+
+2. Preprocess-whisper
+
+Generate the whisper encoder output.
 
 ```python
-
-
+python preprocess_weo.py  -w dataset/vctk/ -p dataset/vctk_largev2
+python preprocess_weo.py  -w dataset/aishell3/ -p dataset/aishell3_largev2
+python preprocess_weo.py  -w dataset/jvs/ -p dataset/jvs_largev2
+python preprocess_weo.py  -w dataset/ESD/ -p dataset/ESD_largev2
 ```
-If you want to 
 
-2. Train
+3. Preprocess-g2p
+
+I provide the g2p results for my dataset in `filelist`. If you want to do g2p to your datasets:
+
+- For English, refer to `preprocess_en.py` and [VITS](https://github.com/jaywalnut310/vits/blob/main/preprocess.py);
+- For Japanese, refer to `preprocess_jvs.py` and [VITS-jvs](https://github.com/zassou65535/VITS);
+- For Chinese, use `jieba_all.py` to split the words and then use the `preprocess_cn.py` to generate the pinyin.
+
+Refer to `filelist/train_test_split.py` to split the dataset into train set and test set.
+
+4. Train cross-lingual TTS and VC
+
+Train the whole model by cross-lingual datasets:
 
 ```python
-
+python train_whisper_hier_multi_pure_3.py  -c configs/cross-lingual.json -m cross-lingual-TTS
 ```
 
+Freeze the speaker-related part and finetune the content related part by mono-lingual dataset:
+
+```python
+python train_whisper_hier_multi_pure_3_freeze.py  -c configs/cross-lingual-emotional-freezefinetune-en.json -m cross-lingual-TTS-en
+```
+
+5. Train cross-lingual emotional TTS and VC
+
+Train the whole model by cross-lingual emotional datasets:
+
+```python
+python train_whisper_hier_multi_pure_esd.py  -c configs/cross-lingual-emotional.json -m cross-lingual-emotional-TTS
+```
+
+Freeze the speaker-related part and finetune the content related part by mono-lingual dataset:
+
+```python
+python train_whisper_hier_multi_pure_esd_freeze.py  -c configs/cross-lingual-emotional-freezefinetune-en.json -m cross-lingual-emotional-TTS-en
+```
 
 ## Change the model structure
 
@@ -90,3 +130,10 @@ So if you want to train this model for more than 3 languages, change the number 
 - https://github.com/PlayVoice/lora-svc
 - https://github.com/ConsistencyVC/ConsistencyVC-voive-conversion
 - https://github.com/OlaWod/FreeVC/blob/main/README.md
+- https://github.com/zassou65535/VITS
+
+---
+
+- Have questions or need assistance? Feel free to [open an issue](https://github.com/X-E-Speech/X-E-Speech-code/issues/new), I will try my best to help you. 
+- Welcome to give your advice to me!
+- If you like this work, please give me a star on GitHub! ⭐️ It encourages me a lot.
