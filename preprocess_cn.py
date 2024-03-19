@@ -10,7 +10,7 @@ if __name__ == '__main__':
   parser = argparse.ArgumentParser()
   parser.add_argument("--out_extension", default="cleaned")
   parser.add_argument("--text_index", default=1, type=int)
-  parser.add_argument("--filelists", nargs="+", default=["dataset/ESD_16k/output_cn.txt.jieba.txt"])
+  parser.add_argument("--filelists", nargs="+", default=["dataset/ESD/output_cn.txt.jieba.txt"])
   parser.add_argument("--text_cleaners", nargs="+", default=["chinese_cleaners1"])
 
   args = parser.parse_args()
