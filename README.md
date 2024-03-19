@@ -16,7 +16,7 @@ We also provide the [pretrained models](https://drive.google.com/drive/folders/1
 
 <table style="width:100%">
   <tr>
-    <td><img src="x-speech-biger.png"  height="400"></td>
+    <td><img src="x-speech-biger.png"  height="350"></td>
   </tr>
 </table>
 
