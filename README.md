@@ -16,7 +16,7 @@ We also provide the [pretrained models](https://drive.google.com/drive/folders/1
 
 <table style="width:100%">
   <tr>
-    <td><img src="x-speech-biger.png"  height="350"></td>
+    <td><img src="x-speech-biger.png"  height="300"></td>
   </tr>
 </table>
 
@@ -33,6 +33,11 @@ We also provide the [pretrained models](https://drive.google.com/drive/folders/1
 2. CD into this repo: `cd X-E-Speech-code`
 
 3. Install python requirements: `pip install -r requirements.txt`
+   
+   You may need to install:
+   1. espeak for English: `apt-get install espeak`
+   2. pypinyin `pip install pypinyin` and [jieba](https://github.com/fxsjy/jieba) for Chinese
+   3. pyopenjtalk for Japenese: `pip install pyopenjtalk`
 
 4. Download [Whisper-large-v2](https://openaipublic.azureedge.net/main/whisper/models/81f7c96c852ee8fc832187b0132e569d6c3065a3252ed18e56effd0b6a73e524/large-v2.pt) and put it under directory 'whisper-pretrain/'
 
@@ -40,6 +45,12 @@ We also provide the [pretrained models](https://drive.google.com/drive/folders/1
 
 6. Download the [ESD](https://github.com/HLTSingapore/Emotional-Speech-Data) dataset (for training cross-lingual emotional TTS and VC)
 
+7. Build Monotonic Alignment Search
+```sh
+# Cython-version Monotonoic Alignment Search
+cd monotonic_align
+python setup.py build_ext --inplace
+```
 
 ## Inference Example
 
@@ -57,12 +68,21 @@ Download the pretrained checkpoints and run:
 
 
 ```
+If you want to 
 
 2. Train
 
 ```python
 
 ```
+
+
+## Change the model structure
+
+There is two SynthesizerTrn in models_whisper_hier_multi_pure.py. The difference is the [n_langs](https://github.com/X-E-Speech/X-E-Speech-code/blob/9d2a3b0132a066f26aaa16fce3b126542688401a/models_whisper_hier_multi_pure.py#L869).
+
+So if you want to train this model for more than 3 languages, change the number of n_langs.
+
 
 ## References
 
