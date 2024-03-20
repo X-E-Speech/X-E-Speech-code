@@ -31,7 +31,7 @@ We also provide the [pretrained models](https://drive.google.com/drive/folders/1
 
 2. CD into this repo: `cd X-E-Speech-code`
 
-3. Install python requirements: `pip install -r requirements.txt`
+3. Python=3.7, Install python requirements: `pip install -r requirements.txt`
    
    You may need to install:
    1. espeak for English: `apt-get install espeak`
