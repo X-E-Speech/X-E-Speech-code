@@ -56,7 +56,14 @@ python setup.py build_ext --inplace
 Download the pretrained checkpoints and run:
 
 ```python
-#Under construction
+#For Cross-lingual Chinese TTS
+inference-cross-lingual-TTS-cn.py
+#For Cross-lingual English TTS
+inference-cross-lingual-TTS-en.py
+#For Cross-lingual Emotional English TTS
+inference-cross-lingual-emotional-TTS-en.py
+#For Cross-lingual Emotional VC
+inference-cross-lingual-emotional-VC.py
 
 ```
 
