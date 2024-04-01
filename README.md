@@ -62,7 +62,7 @@ inference-cross-lingual-TTS-cn.py
 inference-cross-lingual-TTS-en.py
 #For Cross-lingual Emotional English TTS
 inference-cross-lingual-emotional-TTS-en.py
-#For Cross-lingual Emotional VC
+#For Cross-lingual Emotional VC, you need to refer to preprocess_weo.py to generate npy files first
 inference-cross-lingual-emotional-VC.py
 
 ```
